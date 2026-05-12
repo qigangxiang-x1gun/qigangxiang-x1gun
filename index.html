@@ -6,246 +6,422 @@
 -->
 <html>
 	<head>
-		<title>CV</title>
+		<title>Qigang Xiang | Robotics Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.image img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.profile-photo {
+				width: 140px;
+				height: 140px;
+				object-fit: cover;
+				border-radius: 50%;
+				border: 3px solid rgba(255,255,255,0.45);
+			}
+
+			.badge-row a {
+				display: inline-block;
+				margin-right: 8px;
+				margin-bottom: 8px;
+			}
+
+			.project-media {
+				width: 100%;
+				max-width: 320px;
+				height: 200px;
+				object-fit: cover;
+				border-radius: 8px;
+				margin-bottom: 12px;
+			}
+
+			.project-links a {
+				margin-right: 10px;
+				margin-bottom: 8px;
+			}
+
+			.project-meta {
+				font-size: 0.95em;
+				line-height: 1.55;
+			}
+
+			.project-meta strong {
+				color: #ffffff;
+			}
+
+			/* Small gallery for project evidence. Add or remove images as needed. */
+			.media-strip {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 8px;
+				margin: 10px 0 14px 0;
+				max-width: 320px;
+			}
+
+			.media-strip img {
+				width: 100%;
+				height: 72px;
+				object-fit: cover;
+				border-radius: 6px;
+			}
+
+			.cpd-box {
+				background: rgba(255,255,255,0.05);
+				border-radius: 8px;
+				padding: 1.25em;
+				margin-top: 1em;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Sidebar -->
-			<section id="sidebar">
+		<section id="sidebar">
+			<div class="inner">
+				<nav>
+					<ul>
+						<li><a href="#intro">Who I am</a></li>
+						<li><a href="#one">Skills & Interests</a></li>
+						<li><a href="#two">Projects</a></li>
+						<li><a href="#cpd">CPD</a></li>
+						<li><a href="#three">Get in touch</a></li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Intro -->
+			<section id="intro" class="wrapper style1 fullscreen fade-up">
 				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Who I am</a></li>
-							<li><a href="#one">What I have</a></li>
-							<li><a href="#two">What I do</a></li>
-							<li><a href="#three">Get in touch</a></li>
-						</ul>
-					</nav>
+					<h1>About me</h1>
+
+					<img src="images/xqg.jpg" class="profile-photo" alt="Profile photo of Qigang Xiang"><br/><br/>
+
+					<div style="font-size:28px; font-weight:700; color:#ffffff;">Qigang Xiang</div>
+					<div style="color:#d6e6f2;">MSc Robotics Student</div>
+					<div style="color:#d6e6f2;">The University of Manchester</div>
+					<div style="color:#d9d9d9; font-family:monospace;">qigang.xiang@postgrad.manchester.ac.uk</div>
+					<br/>
+
+					<div class="badge-row">
+						<a href="./CV.pdf"><img src="https://img.shields.io/badge/CV-PDF-informational" alt="CV PDF" /></a>
+						<a href="https://github.com/qigangxiang-x1gun"><img src="https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white" alt="GitHub" /></a>
+						<a href="#two"><img src="https://img.shields.io/badge/Portfolio-Projects-blueviolet" alt="Portfolio Projects" /></a>
+					</div>
+
+					<h2>Objective</h2>
+					<p>
+						I aim to develop reliable robotic systems that combine perception, motion planning and manipulation for practical autonomous tasks.
+						My current focus is on ROS 2-based mobile robotics, RGB-D perception, object detection, and robotic manipulation for healthcare, service robotics and automation.
+					</p>
+
+					<h2>Focused Research Interests</h2>
+					<p>
+						Rather than general AI, my research interests are focused on <strong>robot perception and manipulation</strong>:
+						RGB-D sensing, visual object detection, 2D-to-3D target localisation, grasp planning, mobile manipulation, and requirement-based robot testing.
+					</p>
+
+					<ul class="actions">
+						<li><a href="#one" class="button scrolly">Learn more</a></li>
+					</ul>
 				</div>
 			</section>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
+			<!-- One -->
+			<section id="one" class="wrapper style2 spotlights">
+				<section>
+					<a href="#" class="image"><img src="images/skill.png" alt="Skills" data-position="center center" /></a>
+					<div class="content">
 						<div class="inner">
-							<h1>About me</h1>
-							      <!-- 头像（建议上传已裁圆的图片，例如 assets/profile_round.png） -->
-      <img src="images/xqg.jpg" width="140" alt="Profile Photo"><br/><br/>
-
-      <!-- 姓名 -->
-      <div style="font-size:28px; font-weight:700; color:#1f3b57;">Qigang Xiang</div>
-
-      <!-- 身份/院校 -->
-      <div style="color:#607d8b;">Graduate Student</div>
-      <div style="color:#607d8b;">The University of Manchester</div>
-
-      <!-- 邮箱 -->
-      <div style="color:#90a4ae; font-family:monospace;">
-        qigang.xiangng@postgrad.manchester.ac.uk
-      </div>
-      <br/>
-
-      <!-- 图标链接（用图标图片+超链） -->
-      <a href="./CV.pdf"><img src="https://img.shields.io/badge/CV-PDF-informational" /></a>
-      <a href="https://github.com/qigangxiang-x1gun"><img src="https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white" /></a>
-							<p>I am a postgraduate student studying Robotics at the University of Manchester. My research experience focuses on robotics and AI,
-								particularly in machine learning, UAV vision systems, and robotic manipulation. And I aim to advance intelligent robotics for
-								healthcare and automation.</p>
-							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Learn more</a></li>
-							</ul>
+							<h2>Technical Skills</h2>
+							<p>
+								<strong>Programming:</strong> Python, C, C++, MATLAB<br>
+								<strong>Robotics:</strong> ROS 2, SLAM Toolbox, Nav2, mobile robotics, manipulation, finite-state machines<br>
+								<strong>AI & Vision:</strong> PyTorch, CNN, LSTM, YOLOv8, RGB-D perception, image processing<br>
+								<strong>Engineering:</strong> Embedded systems, control systems, system integration, requirement-based testing<br>
+								<strong>Tools:</strong> PyCharm, MATLAB, GitHub, Autodesk Fusion 360, Maya
+							</p>
 						</div>
-					</section>
-
-				<style>
-				.image img {
-				  width: 100%;
-				  height: 100%;
- 				 object-fit: cover;     /* 填充容器 */
-				}
-				</style>
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<a href="#" class="image"><img src="images/skill.png" alt="" data-position="center center" object-fit: cover/></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Skill List</h2>
-									<p>- Programming Languages: Python, C, C++, Matlab, Embedded Systems, Control Systems<br>  
-      								   - Framework: Pycharm, PyTorch, ROS2<br>
-                                       - Software: Maya，Matlab</p>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/research.png" alt="" data-position="center center" object-fit: cover/></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Research Interests</h2>
-									<p> - Image Processing<br>
-      									- Robotics<br> 
-                                        - Embedded System<br>    
-                                        - Machine Learning</p>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/award.jpg" alt="" data-position="center center" object-fit: cover/></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Honours and Awards</h2>
-									<p>	3rd Prize - Zhejiang Provincial College Students Advanced Mathematics Competition (Engineering Category) Jun 2024<br>
-                                        Individual Scholarship of 2023  	May 2024<br>
-									    Individual Scholarship of 2024  	May 2025<br>
-										3rd Prize - Zhejiang Provincial Physics Innovation Competition 	Sep 2023<br>
-										2nd Prize - the 6th National College Intelligent Robot Creativity Competition 	Aug 2023<br>
-										2nd Prize - University-level Intelligent Robot Creative Competition 	Aug 2023<br>
-										2nd Prize - the 5th Zhejiang College Students Intelligent Robot Creativity Competition 	Jun 2023<br>
-										3rd Prize - University-level Intelligent Car Competition 	Dec 2022
-										</p>
-								</div>
-							</div>
-						</section>
-					</section>
-
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
+					</div>
+				</section>
+				<section>
+					<a href="#" class="image"><img src="images/research.png" alt="Research interests" data-position="center center" /></a>
+					<div class="content">
 						<div class="inner">
-							<h2>Research Experience</h2>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-cog"></span>
-									<h3>
-										<video src="./Housekeeper.mp4" autoplay loop muted playsinline width="320" height="200"></video><br>
-										<a href="images/Housekeeper.jpg" style="text-decoration:none; color:#1e40af;">
-										Intelligent Sterilization Housekeeper Based on IoT, Visual Recognition and Deep Learning
-										</a>
-									</h3>
-									<p>Participated in the design of intelligent robots.<br>
-									   Completed project milestone reports.
-									</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-desktop"></span>
-									<h3>
-										<img src="images/UAV.jpg" alt="Profile Photo" width="320" height="200"style="vertical-align:middle; margin-right:8px;"/><br>
-										A CNN-based Early Warning System for Water Safety of Unmanned Aerial Vehicles
-									</h3>
-									<p>Performed drone testing and image recognition sample mapping.<br>
-									   Developed distance algorithms.<br>
-									   Completed manuscript writing and slide deck for project defense.
-									</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-cog"></span>
-									<h3><video src="./robotfinger.mp4" autoplay loop muted playsinline width="320" height="200"></video><br>
-										Individual Project</h3>
-									<p>This project presents the design and implementation of a supernumerary robotic finger controlled by a foot-gesture interface. .</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-desktop"></span>
-									<h3><img src="images/LSTM.jpg" alt="Profile Photo" width="320" height="200" style="vertical-align:middle; margin-right:8px;"/><br>
-										Artificial Intelligence and Machine Learning </h3>
-									<p>Developed a hybrid model with Python using LSTM, CNN, and deep learning techniques on the PyCharm platform, aimed at achieving superior efficiency and reduced error rates in predictive modeling.</p>
-								</section>
-							</div>
+							<h2>Research Direction</h2>
+							<p>
+								My research direction is intelligent robotics, with emphasis on:<br>
+								- Robot perception using RGB-D cameras and vision models<br>
+								- Autonomous navigation and mapping using ROS 2, SLAM and Nav2<br>
+								- Robotic manipulation and grasping for small object handling<br>
+								- Safe and measurable robot testing in real environments
+							</p>
 						</div>
-					</section>
-
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
+					</div>
+				</section>
+				<section>
+					<a href="#" class="image"><img src="images/award.jpg" alt="Awards" data-position="center center" /></a>
+					<div class="content">
 						<div class="inner">
-							<h2>Get in touch</h2>
-							<div class="split style1">
-								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>211 Hathersage Road <br />
-											Manchester, M13 0JQ<br />
-											UK</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">qigang.xiang@postgrad.manchester.ac.uk</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<span>(+44) 07468303252</span>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-								</section>
-							</div>
+							<h2>Honours and Awards</h2>
+							<p>
+								3rd Prize - Zhejiang Provincial College Students Advanced Mathematics Competition, Jun 2024<br>
+								Individual Scholarship of 2023, May 2024<br>
+								Individual Scholarship of 2024, May 2025<br>
+								3rd Prize - Zhejiang Provincial Physics Innovation Competition, Sep 2023<br>
+								2nd Prize - 6th National College Intelligent Robot Creativity Competition, Aug 2023<br>
+								2nd Prize - University-level Intelligent Robot Creative Competition, Aug 2023<br>
+								2nd Prize - 5th Zhejiang College Students Intelligent Robot Creativity Competition, Jun 2023<br>
+								3rd Prize - University-level Intelligent Car Competition, Dec 2022
+							</p>
 						</div>
-					</section>
+					</div>
+				</section>
+			</section>
 
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
+			<!-- Two -->
+			<section id="two" class="wrapper style3 fade-up">
 				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					<h2>Projects and Research Experience</h2>
+					<p>
+						Each project below includes the project goal, my personal contribution, and links to further evidence such as reports, repositories, media or project pages.
+						Replace the placeholder links with your final report, GitHub repository or project PDF when available.
+					</p>
+
+					<div class="features">
+						<section>
+							<span class="icon solid major fa-robot"></span>
+							<h3>
+								<video src="./Housekeeper.mp4" autoplay loop muted playsinline class="project-media"></video><br>
+								Intelligent Sterilization Housekeeper Based on IoT, Visual Recognition and Deep Learning
+							</h3>
+							<div class="media-strip">
+								<img src="images/Housekeeper.jpg" alt="Housekeeper project image 1">
+								<img src="images/Housekeeper_2.jpg" alt="Housekeeper project image 2">
+								<img src="images/Housekeeper_3.jpg" alt="Housekeeper project image 3">
+							</div>
+							<p class="project-meta">
+								<strong>Goal:</strong> Develop an intelligent service robot concept for indoor sterilization using IoT connectivity, visual recognition and deep learning.<br>
+								<strong>My contribution:</strong> Participated in robot design discussions, supported visual-recognition work, prepared milestone reports and contributed to project documentation.<br>
+								<strong>Skills:</strong> Robot design, image recognition, IoT concept design, technical reporting.
+							</p>
+							<div class="project-links">
+								<a href="images/Housekeeper.jpg" class="button small">Project Image</a>
+								<a href="./reports/housekeeper_report.pdf" class="button small">Report</a>
+								<a href="./Housekeeper.mp4" class="button small">Demo Video</a>
+							</div>
+						</section>
+
+						<section>
+							<span class="icon solid major fa-plane"></span>
+							<h3>
+								<img src="images/UAV.jpg" alt="UAV project" class="project-media"/><br>
+								CNN-based Early Warning System for UAV Water Safety
+							</h3>
+							<div class="media-strip">
+								<img src="images/UAV.jpg" alt="UAV project image 1">
+								<img src="images/UAV_2.jpg" alt="UAV project image 2">
+								<img src="images/UAV_3.jpg" alt="UAV project image 3">
+							</div>
+							<p class="project-meta">
+								<strong>Goal:</strong> Build an early-warning vision system to support UAV-based water safety monitoring.<br>
+								<strong>My contribution:</strong> Performed drone testing, prepared image-recognition samples, developed distance-estimation algorithms, and completed manuscript writing and slides for project defence.<br>
+								<strong>Skills:</strong> UAV testing, CNN-based image recognition, distance estimation, technical writing.
+							</p>
+							<div class="project-links">
+								<a href="./reports/uav_water_safety_report.pdf" class="button small">Report</a>
+								<a href="./slides/uav_defence_slides.pdf" class="button small">Slides</a>
+								<a href="https://github.com/qigangxiang-x1gun" class="button small">Repository</a>
+							</div>
+						</section>
+
+						<section>
+							<span class="icon solid major fa-hand-paper"></span>
+							<h3>
+								<video src="./robotfinger.mp4" autoplay loop muted playsinline class="project-media"></video><br>
+								Supernumerary Robotic Finger Controlled by Foot Gesture
+							</h3>
+							<div class="media-strip">
+								<img src="images/robotfinger_1.jpg" alt="Robotic finger image 1">
+								<img src="images/robotfinger_2.jpg" alt="Robotic finger image 2">
+								<img src="images/robotfinger_3.jpg" alt="Robotic finger image 3">
+							</div>
+							<p class="project-meta">
+								<strong>Goal:</strong> Design and implement a supernumerary robotic finger controlled by a foot-gesture interface to support additional grasping or assistance functions.<br>
+								<strong>My contribution:</strong> Designed the control concept, implemented the prototype behaviour, tested the gesture-control interaction and evaluated usability for robotic assistance.<br>
+								<strong>Skills:</strong> Robotic manipulation, embedded control, human-robot interaction, prototyping.
+							</p>
+							<div class="project-links">
+								<a href="./robotfinger.mp4" class="button small">Demo Video</a>
+								<a href="./reports/robotic_finger_report.pdf" class="button small">Report</a>
+								<a href="https://github.com/qigangxiang-x1gun" class="button small">Repository</a>
+							</div>
+						</section>
+
+						<section>
+							<span class="icon solid major fa-brain"></span>
+							<h3>
+								<img src="images/LSTM.jpg" alt="AI and machine learning project" class="project-media"/><br>
+								Hybrid LSTM-CNN Model for Predictive Modelling
+							</h3>
+							<div class="media-strip">
+								<img src="images/LSTM.jpg" alt="LSTM project image 1">
+								<img src="images/LSTM_2.jpg" alt="LSTM project image 2">
+								<img src="images/LSTM_3.jpg" alt="LSTM project image 3">
+							</div>
+							<p class="project-meta">
+								<strong>Goal:</strong> Develop a hybrid deep-learning model to improve prediction accuracy and reduce modelling error.<br>
+								<strong>My contribution:</strong> Implemented the model in Python using LSTM and CNN structures, trained and evaluated the model, and compared prediction performance against baseline approaches.<br>
+								<strong>Skills:</strong> Python, PyTorch, LSTM, CNN, model evaluation, predictive modelling.
+							</p>
+							<div class="project-links">
+								<a href="./reports/lstm_cnn_report.pdf" class="button small">Report</a>
+								<a href="https://github.com/qigangxiang-x1gun" class="button small">Repository</a>
+								<a href="./slides/lstm_cnn_slides.pdf" class="button small">Slides</a>
+							</div>
+						</section>
+
+						<section>
+							<span class="icon solid major fa-cogs"></span>
+							<h3>
+								<img src="images/rover_project.jpg" alt="Autonomous mobile manipulator" class="project-media"/><br>
+								Autonomous Mobile Manipulator for Object Retrieval and Sorting
+							</h3>
+							<div class="media-strip">
+								<img src="images/rover_project.jpg" alt="Rover project image 1">
+								<img src="images/rover_cad.jpg" alt="Rover CAD image">
+								<img src="images/rover_system.jpg" alt="Rover system image">
+							</div>
+							<p class="project-meta">
+								<strong>Goal:</strong> Design and evaluate a ROS 2-based mobile manipulator that explores an indoor arena, detects coloured blocks, retrieves them and sorts them into matching bins.<br>
+								<strong>My contribution:</strong> Supported manipulation and verification work, including grasp strategy, lift requirement analysis, test planning, requirement evidence and integration debugging.<br>
+								<strong>Skills:</strong> ROS 2, Nav2, SLAM Toolbox, RealSense, RPLidar, YOLOv8, myCobot, requirement-based testing.
+							</p>
+							<div class="project-links">
+								<a href="./reports/Final_PDR_Team8_updated.pdf" class="button small">Report</a>
+								<a href="https://github.com/lingrunfeng/Team-8-AERO62520-Robotic-Systems-Design-Project" class="button small">Repository</a>
+								<a href="./videos/team8_technical_demo.mp4" class="button small">Demo Video</a>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+
+			<!-- CPD -->
+			<section id="cpd" class="wrapper style2 fade-up">
+				<div class="inner">
+					<h2>Continuous Professional Development</h2>
+					<p>
+						My CPD reflection is based on UK-SPEC competencies and the engineering skills developed through the robotic systems design project.
+						The main areas I am developing are practical system testing, continuous improvement, and safe robot operation.
+					</p>
+
+					<div class="cpd-box">
+						<h3>B3 – Implement and Evaluate Engineering Solutions</h3>
+						<p>
+							I aim to improve my ability to turn robotic designs into reliable working systems through repeatable testing, quantitative evaluation and failure analysis.
+							Future activities include ROS 2 testing, sensor calibration, manipulation tuning and structured hardware trials.
+						</p>
+					</div>
+
+					<div class="cpd-box">
+						<h3>C4 – Continuous Improvement and Best Practice</h3>
+						<p>
+							I plan to improve my engineering practice by using test logs, lessons learned, version control, design reviews and evidence-based updates after each test cycle.
+						</p>
+					</div>
+
+					<div class="cpd-box">
+						<h3>E2 – Safety and Safe Systems of Work</h3>
+						<p>
+							I want to strengthen my ability to identify hazards and define safe procedures for autonomous robots, including pre-test checklists, emergency stop validation and safe manipulator operation.
+						</p>
+					</div>
+
+					<ul class="actions">
+						<li><a href="./CPD_Plan.pdf" class="button">CPD Plan</a></li>
+						<li><a href="./CPD_Reflection.pdf" class="button">CPD Reflection</a></li>
 					</ul>
 				</div>
-			</footer>
+			</section>
+
+			<!-- Three -->
+			<section id="three" class="wrapper style1 fade-up">
+				<div class="inner">
+					<h2>Get in touch</h2>
+					<div class="split style1">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="5"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><a href="mailto:qigang.xiang@postgrad.manchester.ac.uk" class="button submit">Send Email</a></li>
+								</ul>
+							</form>
+						</section>
+						<section>
+							<ul class="contact">
+								<li>
+									<h3>Address</h3>
+									<span>Manchester, UK</span>
+								</li>
+								<li>
+									<h3>Email</h3>
+									<a href="mailto:qigang.xiang@postgrad.manchester.ac.uk">qigang.xiang@postgrad.manchester.ac.uk</a>
+								</li>
+								<li>
+									<h3>Social</h3>
+									<ul class="icons">
+										<li><a href="https://github.com/qigangxiang-x1gun" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer" class="wrapper style1-alt">
+			<div class="inner">
+				<ul class="menu">
+					<li>&copy; Qigang Xiang. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
