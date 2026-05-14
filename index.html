@@ -13,11 +13,11 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
 		<style>
+			/* General media display */
 			.image img {
 				width: 100%;
 				height: 100%;
-				object-fit: contain;
-				background: rgba(255,255,255,0.06);
+				object-fit: cover;
 			}
 
 			.profile-photo {
@@ -34,15 +34,49 @@
 				margin-bottom: 8px;
 			}
 
-			.project-media {
+			/* New project layout: cleaner than the default Hyperspace features layout */
+			.projects-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+				gap: 2rem;
+				align-items: stretch;
+			}
+
+			.project-card {
+				background: rgba(255,255,255,0.075);
+				border-radius: 16px;
+				padding: 1.4rem;
+				box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+				display: flex;
+				flex-direction: column;
+				min-height: 100%;
+			}
+
+			.project-hero {
 				width: 100%;
-				max-width: 340px;
-				height: 210px;
+				aspect-ratio: 16 / 9;
+				border-radius: 12px;
+				overflow: hidden;
+				background: rgba(255,255,255,0.12);
+				margin-bottom: 1rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.project-hero img,
+			.project-hero video {
+				width: 100%;
+				height: 100%;
+				display: block;
+				object-fit: cover;
+			}
+
+			/* Use this class for CAD drawings, posters, screenshots, or anything that should not be cropped */
+			.project-hero.contain img,
+			.project-hero.contain video {
 				object-fit: contain;
-				border-radius: 8px;
-				margin-bottom: 12px;
-				background: rgba(255,255,255,0.08);
-				padding: 6px;
+				padding: 8px;
 				box-sizing: border-box;
 			}
 
@@ -50,27 +84,41 @@
 				display: grid;
 				grid-template-columns: repeat(3, 1fr);
 				gap: 8px;
-				margin: 8px 0 14px 0;
-				max-width: 340px;
+				margin: 0.5rem 0 1rem 0;
 			}
 
 			.media-strip img {
 				width: 100%;
-				height: 72px;
+				height: 78px;
+				object-fit: cover;
+				border-radius: 8px;
+				background: rgba(255,255,255,0.10);
+			}
+
+			.media-strip.contain img {
 				object-fit: contain;
-				border-radius: 6px;
-				background: rgba(255,255,255,0.08);
 				padding: 4px;
 				box-sizing: border-box;
+			}
+
+			.project-card h3 {
+				margin-top: 0.2rem;
+				margin-bottom: 0.75rem;
+				line-height: 1.35;
 			}
 
 			.project-meta {
 				font-size: 0.95em;
 				line-height: 1.55;
+				flex-grow: 1;
 			}
 
 			.project-meta strong {
 				color: #ffffff;
+			}
+
+			.project-links {
+				margin-top: 1rem;
 			}
 
 			.project-links a {
@@ -80,9 +128,19 @@
 
 			.cpd-box {
 				background: rgba(255,255,255,0.05);
-				border-radius: 8px;
+				border-radius: 12px;
 				padding: 1.25em;
 				margin-top: 1em;
+			}
+
+			@media screen and (max-width: 736px) {
+				.projects-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.project-card {
+					padding: 1.1rem;
+				}
 			}
 		</style>
 	</head>
@@ -121,15 +179,9 @@
 					<br/>
 
 					<div class="badge-row">
-						<a href="./CV.pdf">
-							<img src="https://img.shields.io/badge/CV-PDF-informational" alt="CV PDF" />
-						</a>
-						<a href="https://github.com/qigangxiang-x1gun">
-							<img src="https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white" alt="GitHub" />
-						</a>
-						<a href="#two">
-							<img src="https://img.shields.io/badge/Portfolio-Projects-blueviolet" alt="Portfolio Projects" />
-						</a>
+						<a href="./CV.pdf"><img src="https://img.shields.io/badge/CV-PDF-informational" alt="CV PDF" /></a>
+						<a href="https://github.com/qigangxiang-x1gun"><img src="https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white" alt="GitHub" /></a>
+						<a href="#two"><img src="https://img.shields.io/badge/Portfolio-Projects-blueviolet" alt="Portfolio Projects" /></a>
 					</div>
 
 					<h2>Objective</h2>
@@ -152,11 +204,8 @@
 
 			<!-- One -->
 			<section id="one" class="wrapper style2 spotlights">
-
 				<section>
-					<a href="#" class="image">
-						<img src="images/skill.png" alt="Skills" data-position="center center" />
-					</a>
+					<a href="#" class="image"><img src="images/skill.png" alt="Skills" data-position="center center" /></a>
 					<div class="content">
 						<div class="inner">
 							<h2>Technical Skills</h2>
@@ -172,9 +221,7 @@
 				</section>
 
 				<section>
-					<a href="#" class="image">
-						<img src="images/research.png" alt="Research interests" data-position="center center" />
-					</a>
+					<a href="#" class="image"><img src="images/research.png" alt="Research interests" data-position="center center" /></a>
 					<div class="content">
 						<div class="inner">
 							<h2>Research Direction</h2>
@@ -190,9 +237,7 @@
 				</section>
 
 				<section>
-					<a href="#" class="image">
-						<img src="images/award.jpg" alt="Awards" data-position="center center" />
-					</a>
+					<a href="#" class="image"><img src="images/award.jpg" alt="Awards" data-position="center center" /></a>
 					<div class="content">
 						<div class="inner">
 							<h2>Honours and Awards</h2>
@@ -209,7 +254,6 @@
 						</div>
 					</div>
 				</section>
-
 			</section>
 
 			<!-- Two -->
@@ -220,17 +264,16 @@
 						Each project includes a goal, my personal contribution, and links to further evidence such as reports, repositories, posters or videos.
 					</p>
 
-					<div class="features">
+					<div class="projects-grid">
 
 						<!-- Project 1 -->
-						<section>
-							<span class="icon solid major fa-cog"></span>
-							<h3>
-								<video src="images/Leo_Rover_3D_Model.mp4" autoplay loop muted playsinline class="project-media"></video><br>
-								Autonomous Rover for Object Retrieval and Sorting
-							</h3>
+						<section class="project-card">
+							<div class="project-hero contain">
+								<video src="images/Leo_Rover_3D_Model.mp4" poster="images/rover_cad.jpg" autoplay loop muted playsinline preload="metadata"></video>
+							</div>
+							<h3>Autonomous Rover for Object Retrieval and Sorting</h3>
 
-							<div class="media-strip">
+							<div class="media-strip contain">
 								<img src="images/rover_cad.jpg" alt="Rover CAD model">
 								<img src="images/assembly2.jpg" alt="Manipulator assembly evidence">
 								<img src="images/assembly3.jpg" alt="System assembly evidence">
@@ -249,17 +292,14 @@
 						</section>
 
 						<!-- Project 2 -->
-						<section>
-							<span class="icon solid major fa-cog"></span>
-							<h3>
-								<video src="./Housekeeper.mp4" autoplay loop muted playsinline class="project-media"></video><br>
-								Intelligent Sterilization Housekeeper Based on IoT, Visual Recognition and Deep Learning
-							</h3>
+						<section class="project-card">
+							<div class="project-hero">
+								<video src="./Housekeeper.mp4" poster="reports/Housekeeper.jpg" autoplay loop muted playsinline preload="metadata"></video>
+							</div>
+							<h3>Intelligent Sterilization Housekeeper Based on IoT, Visual Recognition and Deep Learning</h3>
 
 							<div class="media-strip">
 								<img src="reports/Housekeeper.jpg" alt="Housekeeper robot project">
-								<img src="images/pic01.jpg" alt="Housekeeper supporting image 1">
-								<img src="images/pic02.jpg" alt="Housekeeper supporting image 2">
 							</div>
 
 							<p class="project-meta">
@@ -275,12 +315,11 @@
 						</section>
 
 						<!-- Project 3 -->
-						<section>
-							<span class="icon solid major fa-desktop"></span>
-							<h3>
-								<img src="images/UAV_project.gif" alt="UAV water safety project demo" class="project-media"/><br>
-								CNN-based Early Warning System for UAV Water Safety
-							</h3>
+						<section class="project-card">
+							<div class="project-hero">
+								<img src="images/UAV_project.gif" alt="UAV water safety project demo">
+							</div>
+							<h3>CNN-based Early Warning System for UAV Water Safety</h3>
 
 							<div class="media-strip">
 								<img src="images/UAV.jpg" alt="UAV image 1">
@@ -300,17 +339,15 @@
 						</section>
 
 						<!-- Project 4 -->
-						<section>
-							<span class="icon solid major fa-cog"></span>
-							<h3>
-								<video src="images/robotfinger.mp4" autoplay loop muted playsinline class="project-media"></video><br>
-								Supernumerary Robotic Finger Controlled by Foot Gesture
-							</h3>
+						<section class="project-card">
+							<div class="project-hero">
+								<video src="images/robotfinger.mp4" poster="images/robotfinger_1.jpg" autoplay loop muted playsinline preload="metadata"></video>
+							</div>
+							<h3>Supernumerary Robotic Finger Controlled by Foot Gesture</h3>
 
 							<div class="media-strip">
 								<img src="images/robotfinger_1.jpg" alt="Robotic finger image 1">
 								<img src="images/robotfinger_2.jpg" alt="Robotic finger image 2">
-								<img src="images/robotfinger_1.jpg" alt="Robotic finger image 3">
 							</div>
 
 							<p class="project-meta">
@@ -326,14 +363,13 @@
 						</section>
 
 						<!-- Project 5 -->
-						<section>
-							<span class="icon solid major fa-desktop"></span>
-							<h3>
-								<img src="images/LSTM.jpg" alt="AI and machine learning project" class="project-media"/><br>
-								Hybrid LSTM-CNN Model for Predictive Modelling
-							</h3>
+						<section class="project-card">
+							<div class="project-hero contain">
+								<img src="images/LSTM.jpg" alt="AI and machine learning project">
+							</div>
+							<h3>Hybrid LSTM-CNN Model for Predictive Modelling</h3>
 
-							<div class="media-strip">
+							<div class="media-strip contain">
 								<img src="images/LSTM.jpg" alt="LSTM project image 1">
 								<img src="images/LSTM_2.png" alt="LSTM project image 2">
 								<img src="images/LSTM_3.png" alt="LSTM project image 3">
@@ -395,7 +431,6 @@
 				<div class="inner">
 					<h2>Get in touch</h2>
 					<div class="split style1">
-
 						<section>
 							<form method="post" action="#">
 								<div class="fields">
@@ -431,21 +466,12 @@
 								<li>
 									<h3>Social</h3>
 									<ul class="icons">
-										<li>
-											<a href="https://github.com/qigangxiang-x1gun" class="icon brands fa-github">
-												<span class="label">GitHub</span>
-											</a>
-										</li>
-										<li>
-											<a href="#" class="icon brands fa-linkedin-in">
-												<span class="label">LinkedIn</span>
-											</a>
-										</li>
+										<li><a href="https://github.com/qigangxiang-x1gun" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 									</ul>
 								</li>
 							</ul>
 						</section>
-
 					</div>
 				</div>
 			</section>
