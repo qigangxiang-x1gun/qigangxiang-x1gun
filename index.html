@@ -13,6 +13,30 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
 		<style>
+			:root {
+				--tech-cyan: #8be9fd;
+				--tech-blue: #7aa2ff;
+				--tech-violet: #c792ea;
+				--card-bg: rgba(255,255,255,0.075);
+				--card-border: rgba(255,255,255,0.18);
+			}
+
+			body {
+				letter-spacing: 0.01em;
+			}
+
+			h1, h2, h3 {
+				letter-spacing: 0.015em;
+			}
+
+			.wrapper.style3 {
+				background: linear-gradient(135deg, #2b1055 0%, #5b2a86 45%, #1d3557 100%);
+			}
+
+			.wrapper.style2 {
+				background: linear-gradient(135deg, #203a43 0%, #2c5364 100%);
+			}
+
 			/* General media display */
 			.image img {
 				width: 100%;
@@ -43,13 +67,21 @@
 			}
 
 			.project-card {
-				background: rgba(255,255,255,0.075);
-				border-radius: 16px;
-				padding: 1.4rem;
-				box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+				background: linear-gradient(180deg, rgba(255,255,255,0.105), rgba(255,255,255,0.055));
+				border: 1px solid var(--card-border);
+				border-radius: 18px;
+				padding: 1.45rem;
+				box-shadow: 0 16px 38px rgba(0,0,0,0.18);
 				display: flex;
 				flex-direction: column;
 				min-height: 100%;
+				transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+			}
+
+			.project-card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 22px 48px rgba(0,0,0,0.24);
+				border-color: rgba(139,233,253,0.55);
 			}
 
 			.project-hero {
@@ -105,6 +137,16 @@
 				margin-top: 0.2rem;
 				margin-bottom: 0.75rem;
 				line-height: 1.35;
+				color: #ffffff;
+			}
+
+			.project-card h3::after {
+				content: "";
+				display: block;
+				width: 64px;
+				height: 2px;
+				margin-top: 0.65rem;
+				background: linear-gradient(90deg, var(--tech-cyan), transparent);
 			}
 
 			.project-meta {
@@ -114,7 +156,8 @@
 			}
 
 			.project-meta strong {
-				color: #ffffff;
+				color: var(--tech-cyan);
+				font-weight: 700;
 			}
 
 			.project-links {
@@ -124,14 +167,9 @@
 			.project-links a {
 				margin-right: 10px;
 				margin-bottom: 8px;
+				border-color: rgba(139,233,253,0.45) !important;
 			}
 
-			.cpd-box {
-				background: rgba(255,255,255,0.05);
-				border-radius: 12px;
-				padding: 1.25em;
-				margin-top: 1em;
-			}
 
 			@media screen and (max-width: 736px) {
 				.projects-grid {
@@ -155,7 +193,6 @@
 						<li><a href="#intro">Who I am</a></li>
 						<li><a href="#one">Skills & Interests</a></li>
 						<li><a href="#two">Projects</a></li>
-						<li><a href="#cpd">CPD</a></li>
 						<li><a href="#three">Get in touch</a></li>
 					</ul>
 				</nav>
@@ -186,14 +223,14 @@
 
 					<h2>Objective</h2>
 					<p>
-						I aim to develop reliable robotic systems that combine perception, planning and manipulation for practical autonomous tasks.
-						My current focus is ROS 2-based mobile robotics, RGB-D perception, object detection, and robotic manipulation for service robotics, healthcare and automation.
+						My academic and technical objective is to develop reliable robotic systems that integrate perception, planning and manipulation for real-world autonomous tasks.
+						I am particularly interested in ROS 2-based mobile robotics, RGB-D perception, object detection and robotic manipulation for service robotics, healthcare and automation.
 					</p>
 
 					<h2>Focused Research Interests</h2>
 					<p>
-						My research interests are focused on <strong>robot perception and mobile manipulation</strong>, including RGB-D sensing, visual object detection,
-						2D-to-3D target localisation, grasping, SLAM-based navigation and requirement-based robot testing.
+						My research interests focus on <strong>robot perception and mobile manipulation</strong>, especially RGB-D sensing, visual object detection,
+						2D-to-3D target localisation, grasp execution, SLAM-based navigation and requirement-based robotic system evaluation.
 					</p>
 
 					<ul class="actions">
@@ -259,9 +296,9 @@
 			<!-- Two -->
 			<section id="two" class="wrapper style3 fade-up">
 				<div class="inner">
-					<h2>Projects and Research Experience</h2>
+					<h2>Selected Projects and Research Experience</h2>
 					<p>
-						Each project includes a goal, my personal contribution, and links to further evidence such as reports, repositories, posters or videos.
+						The projects below highlight my experience in robotic system design, computer vision, machine learning, prototyping and requirement-based evaluation. Each project includes its goal, my contribution, technical skills and supporting evidence.
 					</p>
 
 					<div class="projects-grid">
@@ -280,8 +317,8 @@
 							</div>
 
 							<p class="project-meta">
-								<strong>Goal:</strong> Design and evaluate a ROS 2-based mobile manipulator that explores an indoor arena, detects coloured blocks, retrieves them and sorts them into matching bins.<br>
-								<strong>My contribution:</strong> Supported manipulation and verification work, including grasp strategy, lift requirement analysis, test planning, requirement evidence and integration debugging.<br>
+								<strong>Goal:</strong> Design and evaluate a ROS 2-based mobile manipulator for autonomous indoor exploration, coloured-object detection, object retrieval and bin sorting.<br>
+								<strong>My contribution:</strong> Supported manipulation and verification work, including grasp strategy, payload analysis, test planning, requirement evidence and integration debugging.<br>
 								<strong>Skills:</strong> ROS 2, Nav2, SLAM Toolbox, RealSense, RPLidar, YOLOv8, myCobot, requirement-based testing.
 							</p>
 
@@ -300,6 +337,8 @@
 
 							<div class="media-strip">
 								<img src="reports/Housekeeper.jpg" alt="Housekeeper robot project">
+								<img src="images/pic01.jpg" alt="Housekeeper supporting image 1">
+								<img src="images/pic02.jpg" alt="Housekeeper supporting image 2">
 							</div>
 
 							<p class="project-meta">
@@ -348,6 +387,7 @@
 							<div class="media-strip">
 								<img src="images/robotfinger_1.jpg" alt="Robotic finger image 1">
 								<img src="images/robotfinger_2.jpg" alt="Robotic finger image 2">
+								<img src="images/robotfinger_1.jpg" alt="Robotic finger image 3">
 							</div>
 
 							<p class="project-meta">
@@ -386,42 +426,6 @@
 							</div>
 						</section>
 
-					</div>
-				</div>
-			</section>
-
-			<!-- CPD -->
-			<section id="cpd" class="wrapper style2 fade-up">
-				<div class="inner">
-					<h2>Continuous Professional Development</h2>
-					<p>
-						My CPD reflection is based on UK-SPEC competencies and the engineering skills developed through the robotic systems design project.
-						My current development focus is practical system testing, continuous improvement, and safe robot operation.
-					</p>
-
-					<div class="cpd-box">
-						<h3>B3 – Implement and Evaluate Engineering Solutions</h3>
-						<p>
-							I aim to improve my ability to turn robotic designs into reliable working systems through repeatable testing,
-							quantitative evaluation and failure analysis. Future activities include ROS 2 testing, sensor calibration,
-							manipulation tuning and structured hardware trials.
-						</p>
-					</div>
-
-					<div class="cpd-box">
-						<h3>C4 – Continuous Improvement and Best Practice</h3>
-						<p>
-							I plan to improve my engineering practice by using test logs, lessons learned, version control,
-							design reviews and evidence-based updates after each test cycle.
-						</p>
-					</div>
-
-					<div class="cpd-box">
-						<h3>E2 – Safety and Safe Systems of Work</h3>
-						<p>
-							I want to strengthen my ability to identify hazards and define safe procedures for autonomous robots,
-							including pre-test checklists, emergency stop validation and safe manipulator operation.
-						</p>
 					</div>
 				</div>
 			</section>
