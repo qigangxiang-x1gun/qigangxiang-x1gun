@@ -34,16 +34,27 @@
 
 			.project-media {
 				width: 100%;
-				max-width: 320px;
-				height: 200px;
+				max-width: 340px;
+				height: 210px;
 				object-fit: cover;
 				border-radius: 8px;
 				margin-bottom: 12px;
+				background: rgba(255,255,255,0.08);
 			}
 
-			.project-links a {
-				margin-right: 10px;
-				margin-bottom: 8px;
+			.media-strip {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 8px;
+				margin: 8px 0 14px 0;
+				max-width: 340px;
+			}
+
+			.media-strip img {
+				width: 100%;
+				height: 72px;
+				object-fit: cover;
+				border-radius: 6px;
 			}
 
 			.project-meta {
@@ -55,20 +66,9 @@
 				color: #ffffff;
 			}
 
-			/* Small gallery for project evidence. Add or remove images as needed. */
-			.media-strip {
-				display: grid;
-				grid-template-columns: repeat(3, 1fr);
-				gap: 8px;
-				margin: 10px 0 14px 0;
-				max-width: 320px;
-			}
-
-			.media-strip img {
-				width: 100%;
-				height: 72px;
-				object-fit: cover;
-				border-radius: 6px;
+			.project-links a {
+				margin-right: 10px;
+				margin-bottom: 8px;
 			}
 
 			.cpd-box {
@@ -120,14 +120,14 @@
 
 					<h2>Objective</h2>
 					<p>
-						I aim to develop reliable robotic systems that combine perception, motion planning and manipulation for practical autonomous tasks.
-						My current focus is on ROS 2-based mobile robotics, RGB-D perception, object detection, and robotic manipulation for healthcare, service robotics and automation.
+						I aim to develop reliable robotic systems that combine perception, planning and manipulation for practical autonomous tasks.
+						My current focus is ROS 2-based mobile robotics, RGB-D perception, object detection, and robotic manipulation for service robotics, healthcare and automation.
 					</p>
 
 					<h2>Focused Research Interests</h2>
 					<p>
-						Rather than general AI, my research interests are focused on <strong>robot perception and manipulation</strong>:
-						RGB-D sensing, visual object detection, 2D-to-3D target localisation, grasp planning, mobile manipulation, and requirement-based robot testing.
+						My research interests are focused on <strong>robot perception and mobile manipulation</strong>, including RGB-D sensing, visual object detection,
+						2D-to-3D target localisation, grasping, SLAM-based navigation and requirement-based robot testing.
 					</p>
 
 					<ul class="actions">
@@ -159,7 +159,7 @@
 						<div class="inner">
 							<h2>Research Direction</h2>
 							<p>
-								My research direction is intelligent robotics, with emphasis on:<br>
+								My research direction is intelligent robotics, especially:<br>
 								- Robot perception using RGB-D cameras and vision models<br>
 								- Autonomous navigation and mapping using ROS 2, SLAM and Nav2<br>
 								- Robotic manipulation and grasping for small object handling<br>
@@ -193,11 +193,32 @@
 				<div class="inner">
 					<h2>Projects and Research Experience</h2>
 					<p>
-						Each project below includes the project goal, my personal contribution, and links to further evidence such as reports, repositories, media or project pages.
-						Replace the placeholder links with your final report, GitHub repository or project PDF when available.
+						Each project includes a goal, my personal contribution, and links to further evidence such as reports, repositories, posters or videos.
 					</p>
 
 					<div class="features">
+						<section>
+							<span class="icon solid major fa-cogs"></span>
+							<h3>
+								<img src="images/rover_cad.jpg" alt="Autonomous mobile manipulator CAD" class="project-media"/><br>
+								Autonomous Mobile Manipulator for Object Retrieval and Sorting
+							</h3>
+							<div class="media-strip">
+								<img src="images/rover_cad.jpg" alt="Rover CAD model">
+								<img src="images/robotfinger_1.jpg" alt="Manipulator-related evidence">
+								<img src="images/skill.png" alt="System skills evidence">
+							</div>
+							<p class="project-meta">
+								<strong>Goal:</strong> Design and evaluate a ROS 2-based mobile manipulator that explores an indoor arena, detects coloured blocks, retrieves them and sorts them into matching bins.<br>
+								<strong>My contribution:</strong> Supported manipulation and verification work, including grasp strategy, lift requirement analysis, test planning, requirement evidence and integration debugging.<br>
+								<strong>Skills:</strong> ROS 2, Nav2, SLAM Toolbox, RealSense, RPLidar, YOLOv8, myCobot, requirement-based testing.
+							</p>
+							<div class="project-links">
+								<a href="https://github.com/lingrunfeng/Team-8-AERO62520-Robotic-Systems-Design-Project" class="button small">Repository</a>
+								<a href="./reports/reports.md" class="button small">Evidence Notes</a>
+							</div>
+						</section>
+
 						<section>
 							<span class="icon solid major fa-robot"></span>
 							<h3>
@@ -205,9 +226,9 @@
 								Intelligent Sterilization Housekeeper Based on IoT, Visual Recognition and Deep Learning
 							</h3>
 							<div class="media-strip">
-								<img src="images/Housekeeper.jpg" alt="Housekeeper project image 1">
-								<img src="images/Housekeeper_2.jpg" alt="Housekeeper project image 2">
-								<img src="images/Housekeeper_3.jpg" alt="Housekeeper project image 3">
+								<img src="reports/Housekeeper.jpg" alt="Housekeeper robot project">
+								<img src="images/pic01.jpg" alt="Project supporting image 1">
+								<img src="images/pic02.jpg" alt="Project supporting image 2">
 							</div>
 							<p class="project-meta">
 								<strong>Goal:</strong> Develop an intelligent service robot concept for indoor sterilization using IoT connectivity, visual recognition and deep learning.<br>
@@ -215,8 +236,7 @@
 								<strong>Skills:</strong> Robot design, image recognition, IoT concept design, technical reporting.
 							</p>
 							<div class="project-links">
-								<a href="images/Housekeeper.jpg" class="button small">Project Image</a>
-								<a href="./reports/housekeeper_report.pdf" class="button small">Report</a>
+								<a href="reports/Housekeeper.jpg" class="button small">Project Image</a>
 								<a href="./Housekeeper.mp4" class="button small">Demo Video</a>
 							</div>
 						</section>
@@ -228,9 +248,9 @@
 								CNN-based Early Warning System for UAV Water Safety
 							</h3>
 							<div class="media-strip">
-								<img src="images/UAV.jpg" alt="UAV project image 1">
-								<img src="images/UAV_2.jpg" alt="UAV project image 2">
-								<img src="images/UAV_3.jpg" alt="UAV project image 3">
+								<img src="images/UAV.jpg" alt="UAV image 1">
+								<img src="images/UAV_2.png" alt="UAV image 2">
+								<img src="images/UAV_3.jpg" alt="UAV image 3">
 							</div>
 							<p class="project-meta">
 								<strong>Goal:</strong> Build an early-warning vision system to support UAV-based water safety monitoring.<br>
@@ -238,32 +258,30 @@
 								<strong>Skills:</strong> UAV testing, CNN-based image recognition, distance estimation, technical writing.
 							</p>
 							<div class="project-links">
-								<a href="./reports/uav_water_safety_report.pdf" class="button small">Report</a>
-								<a href="./slides/uav_defence_slides.pdf" class="button small">Slides</a>
-								<a href="https://github.com/qigangxiang-x1gun" class="button small">Repository</a>
+								<a href="images/UAV_project.gif" class="button small">Project GIF</a>
+								<a href="https://github.com/qigangxiang-x1gun" class="button small">GitHub</a>
 							</div>
 						</section>
 
 						<section>
 							<span class="icon solid major fa-hand-paper"></span>
 							<h3>
-								<video src="./robotfinger.mp4" autoplay loop muted playsinline class="project-media"></video><br>
+								<video src="images/robotfinger.mp4" autoplay loop muted playsinline class="project-media"></video><br>
 								Supernumerary Robotic Finger Controlled by Foot Gesture
 							</h3>
 							<div class="media-strip">
 								<img src="images/robotfinger_1.jpg" alt="Robotic finger image 1">
 								<img src="images/robotfinger_2.jpg" alt="Robotic finger image 2">
-								<img src="images/robotfinger_3.jpg" alt="Robotic finger image 3">
+								<img src="images/rover_cad.jpg" alt="Related CAD evidence">
 							</div>
 							<p class="project-meta">
 								<strong>Goal:</strong> Design and implement a supernumerary robotic finger controlled by a foot-gesture interface to support additional grasping or assistance functions.<br>
-								<strong>My contribution:</strong> Designed the control concept, implemented the prototype behaviour, tested the gesture-control interaction and evaluated usability for robotic assistance.<br>
+								<strong>My contribution:</strong> Designed the control concept, implemented prototype behaviour, tested the gesture-control interaction and evaluated the usability of the device.<br>
 								<strong>Skills:</strong> Robotic manipulation, embedded control, human-robot interaction, prototyping.
 							</p>
 							<div class="project-links">
-								<a href="./robotfinger.mp4" class="button small">Demo Video</a>
-								<a href="./reports/robotic_finger_report.pdf" class="button small">Report</a>
-								<a href="https://github.com/qigangxiang-x1gun" class="button small">Repository</a>
+								<a href="images/robotfinger.mp4" class="button small">Demo Video</a>
+								<a href="reports/robotfinger_poster.pdf" class="button small">Poster</a>
 							</div>
 						</section>
 
@@ -275,8 +293,8 @@
 							</h3>
 							<div class="media-strip">
 								<img src="images/LSTM.jpg" alt="LSTM project image 1">
-								<img src="images/LSTM_2.jpg" alt="LSTM project image 2">
-								<img src="images/LSTM_3.jpg" alt="LSTM project image 3">
+								<img src="images/LSTM_2.png" alt="LSTM project image 2">
+								<img src="images/LSTM_3.png" alt="LSTM project image 3">
 							</div>
 							<p class="project-meta">
 								<strong>Goal:</strong> Develop a hybrid deep-learning model to improve prediction accuracy and reduce modelling error.<br>
@@ -284,32 +302,7 @@
 								<strong>Skills:</strong> Python, PyTorch, LSTM, CNN, model evaluation, predictive modelling.
 							</p>
 							<div class="project-links">
-								<a href="./reports/lstm_cnn_report.pdf" class="button small">Report</a>
-								<a href="https://github.com/qigangxiang-x1gun" class="button small">Repository</a>
-								<a href="./slides/lstm_cnn_slides.pdf" class="button small">Slides</a>
-							</div>
-						</section>
-
-						<section>
-							<span class="icon solid major fa-cogs"></span>
-							<h3>
-								<img src="images/rover_project.jpg" alt="Autonomous mobile manipulator" class="project-media"/><br>
-								Autonomous Mobile Manipulator for Object Retrieval and Sorting
-							</h3>
-							<div class="media-strip">
-								<img src="images/rover_project.jpg" alt="Rover project image 1">
-								<img src="images/rover_cad.jpg" alt="Rover CAD image">
-								<img src="images/rover_system.jpg" alt="Rover system image">
-							</div>
-							<p class="project-meta">
-								<strong>Goal:</strong> Design and evaluate a ROS 2-based mobile manipulator that explores an indoor arena, detects coloured blocks, retrieves them and sorts them into matching bins.<br>
-								<strong>My contribution:</strong> Supported manipulation and verification work, including grasp strategy, lift requirement analysis, test planning, requirement evidence and integration debugging.<br>
-								<strong>Skills:</strong> ROS 2, Nav2, SLAM Toolbox, RealSense, RPLidar, YOLOv8, myCobot, requirement-based testing.
-							</p>
-							<div class="project-links">
-								<a href="./reports/Final_PDR_Team8_updated.pdf" class="button small">Report</a>
-								<a href="https://github.com/lingrunfeng/Team-8-AERO62520-Robotic-Systems-Design-Project" class="button small">Repository</a>
-								<a href="./videos/team8_technical_demo.mp4" class="button small">Demo Video</a>
+								<a href="https://github.com/qigangxiang-x1gun" class="button small">GitHub</a>
 							</div>
 						</section>
 					</div>
@@ -346,11 +339,6 @@
 							I want to strengthen my ability to identify hazards and define safe procedures for autonomous robots, including pre-test checklists, emergency stop validation and safe manipulator operation.
 						</p>
 					</div>
-
-					<ul class="actions">
-						<li><a href="./CPD_Plan.pdf" class="button">CPD Plan</a></li>
-						<li><a href="./CPD_Reflection.pdf" class="button">CPD Reflection</a></li>
-					</ul>
 				</div>
 			</section>
 
