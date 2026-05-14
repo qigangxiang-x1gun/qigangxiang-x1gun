@@ -15,7 +15,8 @@
 			.image img {
 				width: 100%;
 				height: 100%;
-				object-fit: cover;
+				object-fit: contain;
+				background: rgba(255,255,255,0.06);
 			}
 
 			.profile-photo {
@@ -36,18 +37,22 @@
 				width: 100%;
 				max-width: 340px;
 				height: 210px;
-				object-fit: cover;
+				object-fit: contain;
 				border-radius: 8px;
 				margin-bottom: 12px;
 				background: rgba(255,255,255,0.08);
+				padding: 6px;
+				box-sizing: border-box;
 			}
 
-			.media-strip {
-				display: grid;
-				grid-template-columns: repeat(3, 1fr);
-				gap: 8px;
-				margin: 8px 0 14px 0;
-				max-width: 340px;
+			.media-strip img {
+				width: 100%;
+				height: 72px;
+				object-fit: contain;
+				border-radius: 6px;
+				background: rgba(255,255,255,0.08);
+				padding: 4px;
+				box-sizing: border-box;
 			}
 
 			.media-strip img {
@@ -200,7 +205,7 @@
 						<section>
 							<span class="icon solid major fa-cogs"></span>
 							<h3>
-								<img src="images/Leo Rover 3D Model.mp4" alt="Leo Rover Project" class="project-media"/><br>
+								<video src="images/Leo_Rover_3D_Model.mp4" autoplay loop muted playsinline class="project-media"></video><br>
 								Autonomous Rover for Object Retrieval and Sorting
 							</h3>
 							<div class="media-strip">
@@ -244,7 +249,7 @@
 						<section>
 							<span class="icon solid major fa-plane"></span>
 							<h3>
-								<img src="images/UAV.jpg" alt="UAV project" class="project-media"/><br>
+								<img src="images/UAV_project.gif" alt="UAV water safety project demo" class="project-media"/>
 								CNN-based Early Warning System for UAV Water Safety
 							</h3>
 							<div class="media-strip">
@@ -258,7 +263,6 @@
 								<strong>Skills:</strong> UAV testing, CNN-based image recognition, distance estimation, technical writing.
 							</p>
 							<div class="project-links">
-								<a href="images/UAV_project.gif" class="button small">Project GIF</a>
 								<a href="https://github.com/qigangxiang-x1gun" class="button small">GitHub</a>
 							</div>
 						</section>
@@ -272,7 +276,6 @@
 							<div class="media-strip">
 								<img src="images/robotfinger_1.jpg" alt="Robotic finger image 1">
 								<img src="images/robotfinger_2.jpg" alt="Robotic finger image 2">
-								<img src="images/rover_cad.jpg" alt="Related CAD evidence">
 							</div>
 							<p class="project-meta">
 								<strong>Goal:</strong> Design and implement a supernumerary robotic finger controlled by a foot-gesture interface to support additional grasping or assistance functions.<br>
@@ -308,40 +311,6 @@
 					</div>
 				</div>
 			</section>
-
-			<!-- CPD -->
-			<section id="cpd" class="wrapper style2 fade-up">
-				<div class="inner">
-					<h2>Continuous Professional Development</h2>
-					<p>
-						My CPD reflection is based on UK-SPEC competencies and the engineering skills developed through the robotic systems design project.
-						The main areas I am developing are practical system testing, continuous improvement, and safe robot operation.
-					</p>
-
-					<div class="cpd-box">
-						<h3>B3 – Implement and Evaluate Engineering Solutions</h3>
-						<p>
-							I aim to improve my ability to turn robotic designs into reliable working systems through repeatable testing, quantitative evaluation and failure analysis.
-							Future activities include ROS 2 testing, sensor calibration, manipulation tuning and structured hardware trials.
-						</p>
-					</div>
-
-					<div class="cpd-box">
-						<h3>C4 – Continuous Improvement and Best Practice</h3>
-						<p>
-							I plan to improve my engineering practice by using test logs, lessons learned, version control, design reviews and evidence-based updates after each test cycle.
-						</p>
-					</div>
-
-					<div class="cpd-box">
-						<h3>E2 – Safety and Safe Systems of Work</h3>
-						<p>
-							I want to strengthen my ability to identify hazards and define safe procedures for autonomous robots, including pre-test checklists, emergency stop validation and safe manipulator operation.
-						</p>
-					</div>
-				</div>
-			</section>
-
 			<!-- Three -->
 			<section id="three" class="wrapper style1 fade-up">
 				<div class="inner">
