@@ -44,6 +44,22 @@
 				object-fit: cover;
 			}
 
+			/* Spotlight images for Skills / Research / Awards */
+			.wrapper.style2.spotlights > section > .image {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: #f7fbff;
+				overflow: hidden;
+			}
+
+			.wrapper.style2.spotlights > section > .image img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+
 			.profile-photo {
 				width: 140px;
 				height: 140px;
@@ -58,7 +74,7 @@
 				margin-bottom: 8px;
 			}
 
-			/* New project layout: cleaner than the default Hyperspace features layout */
+			/* Project layout */
 			.projects-grid {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -76,6 +92,7 @@
 				flex-direction: column;
 				min-height: 100%;
 				transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+				scroll-margin-top: 2rem;
 			}
 
 			.project-card:hover {
@@ -96,6 +113,7 @@
 				justify-content: center;
 			}
 
+			/* Main project image/video: fill the display area */
 			.project-hero img,
 			.project-hero video {
 				width: 100%;
@@ -103,6 +121,7 @@
 				display: block;
 				object-fit: cover;
 			}
+
 			.media-strip {
 				display: grid;
 				grid-template-columns: repeat(3, 1fr);
@@ -110,6 +129,7 @@
 				margin: 0.5rem 0 1rem 0;
 			}
 
+			/* Three supporting images: cropped for a cleaner card layout */
 			.media-strip img {
 				width: 100%;
 				height: 82px;
@@ -155,7 +175,6 @@
 				margin-bottom: 8px;
 				border-color: rgba(139,233,253,0.45) !important;
 			}
-
 
 			@media screen and (max-width: 736px) {
 				.projects-grid {
@@ -290,13 +309,13 @@
 					<div class="projects-grid">
 
 						<!-- Project 1 -->
-						<section class="project-card">
-							<div class="project-hero contain">
+						<section class="project-card" id="project-rover">
+							<div class="project-hero">
 								<video src="images/Leo_Rover_3D_Model.mp4" poster="images/project_name.jpg" autoplay loop muted playsinline preload="metadata"></video>
 							</div>
 							<h3>Autonomous Rover for Object Retrieval and Sorting</h3>
 
-							<div class="media-strip"}]}Japgolly фин (?) Wait invalid JSON due stray. Need send valid. Let's retry maybe previous call failed? It did not show because invalid in my message? I need in commentary to=canmore.update_textdoc. Let's send proper. (Previous hasn't executed? It will likely produce error due malformed; but not shown yet? I see message in commentary with JSON, maybe invalid due stray, need fix). We'll do new call. Ensure no stray. We'll assume previous maybe error not returned. Use canmore update again.久久综合 ugh I messed channel? Let's view? There is no tool response. Need send valid.) Next. Wait in final? Let's call. We'll do the same. (Need not overdo one turn? It says don't do multiple canvas calls unless recovering from error; okay this is recovery because previous malformed not executed maybe). Need ensure JSON object. Use escape. Let's call.禧 | >
+							<div class="media-strip">
 								<img src="images/rover_cad.jpg" alt="Rover CAD model">
 								<img src="images/assembly2.jpg" alt="Manipulator assembly evidence">
 								<img src="images/assembly3.jpg" alt="System assembly evidence">
@@ -315,7 +334,7 @@
 						</section>
 
 						<!-- Project 2 -->
-						<section class="project-card">
+						<section class="project-card" id="project-housekeeper">
 							<div class="project-hero">
 								<video src="./Housekeeper.mp4" poster="reports/Housekeeper.jpg" autoplay loop muted playsinline preload="metadata"></video>
 							</div>
@@ -323,7 +342,8 @@
 
 							<div class="media-strip">
 								<img src="reports/Housekeeper.jpg" alt="Housekeeper robot project">
-								<img src="images/Housekeeper3.jpg" alt="Housekeeper supporting image 2">
+								<img src="images/Housekeeper3.jpg" alt="Housekeeper supporting image 1">
+								<img src="images/pic01.jpg" alt="Housekeeper supporting image 2">
 							</div>
 
 							<p class="project-meta">
@@ -339,7 +359,7 @@
 						</section>
 
 						<!-- Project 3 -->
-						<section class="project-card">
+						<section class="project-card" id="project-uav">
 							<div class="project-hero">
 								<img src="images/UAV_project.gif" alt="UAV water safety project demo">
 							</div>
@@ -363,7 +383,7 @@
 						</section>
 
 						<!-- Project 4 -->
-						<section class="project-card">
+						<section class="project-card" id="project-robotfinger">
 							<div class="project-hero">
 								<video src="images/robotfinger.mp4" poster="images/robotfinger_1.jpg" autoplay loop muted playsinline preload="metadata"></video>
 							</div>
@@ -372,6 +392,7 @@
 							<div class="media-strip">
 								<img src="images/robotfinger_1.jpg" alt="Robotic finger image 1">
 								<img src="images/robotfinger_2.jpg" alt="Robotic finger image 2">
+								<img src="images/robotfinger_1.jpg" alt="Robotic finger image 3">
 							</div>
 
 							<p class="project-meta">
@@ -387,13 +408,13 @@
 						</section>
 
 						<!-- Project 5 -->
-						<section class="project-card">
-							<div class="project-hero contain">
+						<section class="project-card" id="project-lstm">
+							<div class="project-hero">
 								<img src="images/LSTM.jpg" alt="AI and machine learning project">
 							</div>
 							<h3>Hybrid LSTM-CNN Model for Predictive Modelling</h3>
 
-							<div class="media-strip"}]}Japgolly фин (?) Wait invalid JSON due stray. Need send valid. Let's retry maybe previous call failed? It did not show because invalid in my message? I need in commentary to=canmore.update_textdoc. Let's send proper. (Previous hasn't executed? It will likely produce error due malformed; but not shown yet? I see message in commentary with JSON, maybe invalid due stray, need fix). We'll do new call. Ensure no stray. We'll assume previous maybe error not returned. Use canmore update again.久久综合 ugh I messed channel? Let's view? There is no tool response. Need send valid.) Next. Wait in final? Let's call. We'll do the same. (Need not overdo one turn? It says don't do multiple canvas calls unless recovering from error; okay this is recovery because previous malformed not executed maybe). Need ensure JSON object. Use escape. Let's call.禧 | >
+							<div class="media-strip">
 								<img src="images/LSTM.jpg" alt="LSTM project image 1">
 								<img src="images/LSTM_2.png" alt="LSTM project image 2">
 								<img src="images/LSTM_3.png" alt="LSTM project image 3">
